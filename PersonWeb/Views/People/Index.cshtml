@@ -1,0 +1,33 @@
+﻿@model BLL.PersonBLL
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+    </tr>
+
+@foreach (var person in BLL.PersonBLL.showPeople()) {
+    <tr>
+        <td>@person.FirstName @person.LastName</td>
+        <td>@person.Age</td>
+        <td>@person.Birthday</td>
+        <td>@person.Gender</td>
+<!--    <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>-->
+    </tr>
+}
+
+</table>
